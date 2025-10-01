@@ -26,6 +26,8 @@ const Hero = () => {
       // If you prefer the image scale without being cropped, use 'contain' instead of 'cover'.
   }
 
+	const DARK_COLOR = '#010127'; 
+
   return (
     <>
       <div style={{ width: '100vw', height: '100vh' }}> 
@@ -43,11 +45,12 @@ const Hero = () => {
             }}
           />
 
+
           {/*CITY LAYERS - change factor and minHeight to make them bigger */}
           <ParallaxLayer 
             offset={0} 
             speed={0.2} 
-            factor={1} // Give the image 1.5x the viewport height to work with
+            factor={1} // give the image the viewport height to work with
             style={{ ...cityLayerStyle, zIndex: 10 }}
           >
             <img src={city1} alt="Farthest City" style={{ ...cityImageStyle }} 
@@ -89,6 +92,16 @@ const Hero = () => {
           >
             <img src={city5} alt="Closest City" style={{ ...cityImageStyle }} />
           </ParallaxLayer>
+
+					<ParallaxLayer 
+            offset={0.999} // start just before the first page ends (to ensure no gap)
+            speed={0.8}   
+            factor={10}  
+            style={{ 
+              backgroundColor: DARK_COLOR,
+              zIndex: 50,
+            }}
+          />
 
         </Parallax>
       </div>
