@@ -1,5 +1,5 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-
+import { generateStars } from '../utils/generateStars'
 import sky from '../images/sky.png';
 import city1 from '../images/city1.png' 
 import city2 from '../images/city2.png'
@@ -7,23 +7,21 @@ import city3 from '../images/city3.png'
 import city4 from '../images/city4.png'
 import city5 from '../images/city5.png' 
 
-
 const Hero = () => {
   
-  // Reusable style to position the content at the bottom-center of its layer
   const cityLayerStyle: React.CSSProperties = {
     display: 'flex',
-    alignItems: 'flex-end', // Aligns the image to the bottom
-    justifyContent: 'center', // Centers the image horizontally
+    alignItems: 'flex-end', // aligns the image to the bottom
+    justifyContent: 'center', // centers the image horizontally
   };
   
-  // Reusable image style to force it to scale up vertically
   const cityImageStyle: React.CSSProperties = {
       width: '100%',
-      // This is the key change to make the image visually taller/bigger
+      // change here to make the buildings bigger/smaller
       minHeight: '70%', 
-      objectFit: 'cover', // Ensures the image covers the area without distortion (can crop)
-      // If you prefer the image scale without being cropped, use 'contain' instead of 'cover'.
+      objectFit: 'cover', 
+      // ensures the image covers the area without distortion (can crop)
+      // if you prefer the image scale without being cropped, use 'contain' instead of 'cover'.
   }
 
 	const DARK_COLOR = '#010127'; 
@@ -108,19 +106,27 @@ const Hero = () => {
               display: 'flex', 
               alignItems: 'center', 
               justifyContent: 'center',
-              zIndex: 5, 
+              zIndex: 15, 
               color: 'white',
-              paddingBottom: 250,
-              
-              // fontFamily: 'Space Mono, monospace', 
+              paddingBottom: 250, 
               fontFamily: "'Jersey 15', sans-serif",
               fontSize: '2vw',
               fontWeight: 700,
               textShadow: '0 0 10px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #6f00ffff, 0 0 40px #FF69B4, 0 0 70px #FF69B4, 0 0 80px #FF69B4, 0 0 100px #FF69B4, 0 0 150px #FF69B4',
-
             }}
           >
             <h1>Steven Long Nguyen</h1>
+          </ParallaxLayer>
+
+          <ParallaxLayer 
+            offset={0} 
+            speed={0.15}
+            factor={1.0}
+            style={{
+              zIndex: 4,
+            }}
+          >
+            {generateStars(300)} 
           </ParallaxLayer>
 
         </Parallax>
