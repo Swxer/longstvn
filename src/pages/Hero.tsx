@@ -45,7 +45,6 @@ const Hero = () => {
             }}
           />
 
-
           {/*CITY LAYERS - change factor and minHeight to make them bigger */}
           <ParallaxLayer 
             offset={0} 
@@ -102,6 +101,27 @@ const Hero = () => {
               zIndex: 50,
             }}
           />
+
+          <ParallaxLayer
+            speed={0} 
+            style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center',
+              zIndex: 5, 
+              color: 'white',
+              paddingBottom: 250,
+              
+              // fontFamily: 'Space Mono, monospace', 
+              fontFamily: "'Jersey 15', sans-serif",
+              fontSize: '2vw',
+              fontWeight: 700,
+              textShadow: '0 0 10px #FF69B4, 0 0 20px #FF69B4, 0 0 30px #6f00ffff, 0 0 40px #FF69B4, 0 0 70px #FF69B4, 0 0 80px #FF69B4, 0 0 100px #FF69B4, 0 0 150px #FF69B4',
+
+            }}
+          >
+            <h1>Steven Long Nguyen</h1>
+          </ParallaxLayer>
 
         </Parallax>
       </div>
