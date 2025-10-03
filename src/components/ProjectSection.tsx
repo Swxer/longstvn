@@ -1,12 +1,13 @@
 import { Container, Typography, Grid } from '@mui/material';
 import ProjectCard from './ProjectCard';
+import { projects } from '../utils/projects'
 
-const projects = [
-  { id: 1, title: 'Lizard (Placeholder)', description: 'This is a test.' },
-  { id: 2, title: 'Project Two', description: 'A brief description of my second project.' },
-  { id: 3, title: 'Project Three', description: 'This project highlights my backend skills.' },
-  { id: 4, title: 'Project Four', description: 'A full-stack application showcase.' },
-];
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+}
 
 const ProjectSection = () => {
   return (
@@ -25,14 +26,10 @@ const ProjectSection = () => {
         Projects
       </Typography>
 
-      {/* Grid container to hold all the project cards */}
       <Grid container spacing={4}>
-        {/* The mapping function, ready for your real data */}
-        {projects.map((project) => (
+        {projects.map((project: Project) => (
           
-          /* Grid item defines the column width for a single card */
           <Grid 
-            item={true}
             key={project.id} 
             size={{
                 xs: 12,
@@ -43,6 +40,7 @@ const ProjectSection = () => {
             <ProjectCard 
               title={project.title} 
               description={project.description} 
+              image={project.image}
             />
           </Grid>
         ))}

@@ -1,13 +1,13 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { generateStars } from '../utils/generateStars'
 import  ProjectSection from '../components/ProjectSection'
-import sky from '../images/sky.png';
-import city1 from '../images/city1.png' 
-import city2 from '../images/city2.png'
-import city3 from '../images/city3.png'
-import city4 from '../images/city4.png'
-import city5 from '../images/city5.png' 
-import moon from '../images/moon.png'
+import sky from '../images/hero/sky.png';
+import city1 from '../images/hero/city1.png' 
+import city2 from '../images/hero/city2.png'
+import city3 from '../images/hero/city3.png'
+import city4 from '../images/hero/city4.png'
+import city5 from '../images/hero/city5.png' 
+import moon from '../images/hero/moon.png'
 import type React from 'react';
 
 const Hero = () => {
