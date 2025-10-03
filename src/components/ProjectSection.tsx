@@ -7,11 +7,12 @@ export interface Project {
   title: string;
   description: string;
   image: string;
+  url: string;
 }
 
 const ProjectSection = () => {
   return (
-    <Container maxWidth="lg" sx={{ py: 8 }}> {/* Use py for padding top/bottom */}
+    <Container maxWidth="lg" sx={{ py: 8 }}> 
       <Typography 
         variant="h3" 
         component="h2" 
@@ -41,6 +42,7 @@ const ProjectSection = () => {
               title={project.title} 
               description={project.description} 
               image={project.image}
+              url={project.url}
             />
           </Grid>
         ))}

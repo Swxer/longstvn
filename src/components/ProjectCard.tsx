@@ -1,22 +1,33 @@
-import { Box, Card, CardContent, Typography, CardMedia } from '@mui/material'; // <-- Add CardMedia
+import { Box, Card, CardContent, Typography, CardMedia } from '@mui/material'; 
 
-// Update the interface to include the image source (string URL)
 interface ProjectCardProps {
   title: string;
   description: string;
-  image: string; 
+  image: string;
+  url: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, url }) => {
   const FIXED_IMAGE_HEIGHT = 200; 
   return (
-    <Box sx={{ mb: 4, width: '100%' }}> 
+    <Box 
+      component="a"
+      href={url}
+      target="_blank"sx={{ mb: 4, width: '100%' }}
+    > 
       <Card 
+
         sx={{ 
           // minHeight: 200 + FIXED_IMAGE_HEIGHT, 
           backgroundColor: 'rgba(255, 255, 255, 0.05)', 
           border: '1px solid rgba(255, 255, 255, 0.1)', 
-          color: 'white' 
+          color: 'white', 
+          textDecoration: 'none',
+          cursor: 'pointer',
+          '&:hover': {
+          transform: 'scale(1.02)',
+          transition: 'transform 0.3s ease-in-out',
+          }
         }}
       >
 
