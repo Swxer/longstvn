@@ -1,6 +1,7 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { generateStars } from '../utils/generateStars'
 import  ProjectSection from '../components/ProjectSection'
+import Footer from '../components/Footer'
 import sky from '../images/hero/sky.png';
 import city1 from '../images/hero/city1.png' 
 import city2 from '../images/hero/city2.png'
@@ -105,7 +106,7 @@ const Hero = () => {
 					<ParallaxLayer 
             offset={0.999} // start just before the first page ends (to ensure no gap)
             speed={0.8}   
-            factor={10}  
+            factor={0}  
             style={{ 
               backgroundColor: DARK_COLOR,
               zIndex: 50,
@@ -113,6 +114,7 @@ const Hero = () => {
             }}
           >
               <ProjectSection />
+              <Footer />
           </ParallaxLayer>
 
           <ParallaxLayer
