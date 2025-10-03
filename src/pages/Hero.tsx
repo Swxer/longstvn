@@ -1,11 +1,14 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { generateStars } from '../utils/generateStars'
+import  ProjectSection from '../components/ProjectSection'
 import sky from '../images/sky.png';
 import city1 from '../images/city1.png' 
 import city2 from '../images/city2.png'
 import city3 from '../images/city3.png'
 import city4 from '../images/city4.png'
 import city5 from '../images/city5.png' 
+import moon from '../images/moon.png'
+import type React from 'react';
 
 const Hero = () => {
   
@@ -16,12 +19,21 @@ const Hero = () => {
   };
   
   const cityImageStyle: React.CSSProperties = {
-      width: '100%',
-      // change here to make the buildings bigger/smaller
-      minHeight: '70%', 
-      objectFit: 'cover', 
-      // ensures the image covers the area without distortion (can crop)
-      // if you prefer the image scale without being cropped, use 'contain' instead of 'cover'.
+    width: '100%',
+    // change here to make the buildings bigger/smaller
+    minHeight: '70%', 
+    objectFit: 'cover', 
+    // ensures the image covers the area without distortion (can crop)
+    // if you prefer the image scale without being cropped, use 'contain' instead of 'cover'.
+  }
+
+  const moonStyle: React.CSSProperties = {
+    position: 'absolute',
+    left: '85vw',
+    top: '5vh',
+    width: '120px',
+    height: 'auto',
+    opacity: 0.9,
   }
 
 	const DARK_COLOR = '#010127'; 
@@ -97,8 +109,11 @@ const Hero = () => {
             style={{ 
               backgroundColor: DARK_COLOR,
               zIndex: 50,
+              display: 'block',
             }}
-          />
+          >
+              <ProjectSection />
+          </ParallaxLayer>
 
           <ParallaxLayer
             speed={0} 
@@ -123,10 +138,20 @@ const Hero = () => {
             speed={0.15}
             factor={1.0}
             style={{
-              zIndex: 4,
+              zIndex: 2,
             }}
           >
             {generateStars(300)} 
+          </ParallaxLayer>
+
+          <ParallaxLayer 
+            offset={0} 
+            factor={1}
+            style={{ 
+              zIndex: 3, 
+            }}
+          >
+            <img src={moon} alt="Moon" style={{ ...moonStyle }} />
           </ParallaxLayer>
 
         </Parallax>
