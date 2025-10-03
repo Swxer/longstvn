@@ -47,6 +47,7 @@
 
 /* removes default margin/padding from the body and root html element */
 html, body, #root { 
+  background-color: #010127;
   margin: 0;
   padding: 0;
   width: 100%;

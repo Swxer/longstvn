@@ -1,5 +1,6 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { generateStars } from '../utils/generateStars'
+import { Typography, Box } from '@mui/material';
 import  ProjectSection from '../components/ProjectSection'
 import Footer from '../components/Footer'
 import sky from '../images/hero/sky.png';
@@ -38,11 +39,17 @@ const Hero = () => {
   }
 
 	const DARK_COLOR = '#010127'; 
+  const CONTENT_FACTOR = 2.4; 
+  
+  // Total pages = 1 (Hero) + CONTENT_FACTOR + 0.01 (Buffer to prevent cutoff)
+  const TOTAL_PAGES = 1 + CONTENT_FACTOR + 0.01; // = 3.41
 
+  // Footer Offset = TOTAL_PAGES - 1 (The last visible page is always total pages - 1)
+  const FOOTER_OFFSET = TOTAL_PAGES - 1; // = 2.41
   return (
     <>
       <div style={{ width: '100vw', height: '100vh' }}> 
-        <Parallax pages={4}>
+        <Parallax pages={TOTAL_PAGES}>
 
           <ParallaxLayer 
             offset={0} 
@@ -106,7 +113,7 @@ const Hero = () => {
 					<ParallaxLayer 
             offset={0.999} // start just before the first page ends (to ensure no gap)
             speed={0.8}   
-            factor={0}  
+            factor={CONTENT_FACTOR}  
             style={{ 
               backgroundColor: DARK_COLOR,
               zIndex: 50,
@@ -114,7 +121,27 @@ const Hero = () => {
             }}
           >
               <ProjectSection />
-              <Footer />
+              <Box sx={{ 
+                  flexGrow: 1, 
+                  marginTop: '60vh',
+                  display: 'flex',
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  py: 10, 
+              }}>
+                  <Typography 
+                      variant="h4" 
+                      sx={{
+                          fontFamily: '"Jersey 15", sans-serif',
+                          color: '#c1ffe4',
+                          textAlign: 'center',
+                          textShadow: '0 0 5px #87fbf9',
+                          px: 2,
+                      }}
+                  >
+                      yes this is a big space indeed
+                  </Typography>
+              </Box>
           </ParallaxLayer>
 
           <ParallaxLayer
@@ -134,6 +161,18 @@ const Hero = () => {
           >
             <h1>Steven Long Nguyen</h1>
           </ParallaxLayer>
+
+          <ParallaxLayer 
+            offset={FOOTER_OFFSET} 
+            speed={0}
+            style={{ 
+                zIndex: 51,
+                display: 'flex',
+                alignItems: 'flex-end', 
+            }}
+          >
+            <Footer />
+          </ParallaxLayer>          
 
           <ParallaxLayer 
             offset={0} 
