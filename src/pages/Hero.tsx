@@ -11,6 +11,7 @@ import city4 from '../images/hero/city4.png'
 import city5 from '../images/hero/city5.png' 
 import moon from '../images/hero/moon.png'
 import type React from 'react';
+import TechStack from '../components/TechStack';
 
 const Hero = () => {
   
@@ -120,6 +121,7 @@ const Hero = () => {
               display: 'block',
             }}
           >
+              <TechStack />
               <ProjectSection />
               <Box sx={{ 
                   flexGrow: 1, 

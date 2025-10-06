@@ -23,7 +23,7 @@ const TechStack: React.FC = () => {
 
       <Grid container spacing={4} justifyContent="center">
         {techSkills.map((skill) => (
-          <Grid item key={skill.id}>
+          <Grid key={skill.id}>
             <Tooltip 
                 title={skill.name} // The text that appears on hover
                 arrow 
