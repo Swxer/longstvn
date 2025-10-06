@@ -1,6 +1,6 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import { generateStars } from '../utils/generateStars'
-import { Typography, Box } from '@mui/material';
+import { Box } from '@mui/material';
 import  ProjectSection from '../components/ProjectSection'
 import Footer from '../components/Footer'
 import sky from '../images/hero/sky.png';
@@ -10,6 +10,7 @@ import city3 from '../images/hero/city3.png'
 import city4 from '../images/hero/city4.png'
 import city5 from '../images/hero/city5.png' 
 import moon from '../images/hero/moon.png'
+import oiia from '../images/hero/oiia.gif'
 import type React from 'react';
 import TechStack from '../components/TechStack';
 
@@ -123,26 +124,28 @@ const Hero = () => {
           >
               <TechStack />
               <ProjectSection />
-              <Box sx={{ 
-                  flexGrow: 1, 
-                  marginTop: '60vh',
-                  display: 'flex',
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
-                  py: 10, 
-              }}>
-                  <Typography 
-                      variant="h4" 
-                      sx={{
-                          fontFamily: '"Jersey 15", sans-serif',
-                          color: '#c1ffe4',
-                          textAlign: 'center',
-                          textShadow: '0 0 5px #87fbf9',
-                          px: 2,
+              <Box 
+                sx={{ 
+                    width: '100%',
+                    minHeight: '100vh',
+                    display: 'flex',
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    py: 10,
+                }}
+              >
+                  <img 
+                      src={oiia} 
+                      alt="spinning cat" 
+                      style={{
+                          maxWidth: '90%', 
+                          maxHeight: '100%', 
+                          height: 'auto', 
+                          objectFit: 'contain', 
+                          margin: 'auto', 
+                          display: 'block',
                       }}
-                  >
-                      yes this is a big space indeed
-                  </Typography>
+                  />
               </Box>
           </ParallaxLayer>
 
