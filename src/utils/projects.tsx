@@ -13,15 +13,9 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-    { id: 1, 
-      title: 'AssaultCube Trainer', 
-      description: 'Custom external program developed for real-time memory manipulation and advanced in-game functionality.', 
-      image: AssaultCube,
-      url: 'https://github.com/Swxer/AssaultCube-v1.2.0.2-Trainer'
-    },
     { id: 2, 
       title: 'Loop Mania', 
-      description: "A 2D procedural strategy game featuring cyclical map traversal, automated character movement, and dynamic battle elements.", 
+      description: "A 2D strategy game featuring cyclical map traversal, automated character movement, and dynamic battle elements.", 
       image: LoopMania,
       url: 'https://github.com/Swxer/Loop-Mania'
     },
@@ -33,7 +27,7 @@ export const projects: Project[] = [
     },
     { id: 4, 
       title: 'Hamster Health', 
-      description: 'Award-winning hackathon project (ranked top 16 of 75 teams) focused on organization, habit tracking, and user motivation.', 
+      description: 'Hackathon project (ranked top 16 of 75 teams) focused on organization, habit tracking, and user motivation.', 
       image: HamsterHealth,
       url: 'https://github.com/Team-Hamsterdam'
     },
@@ -43,4 +37,10 @@ export const projects: Project[] = [
       image: Transcriber,
       url:'https://github.com/Swxer/guitar-tab-transcriber'
     },
+    { id: 1, 
+      title: 'AssaultCube Trainer', 
+      description: 'Runtime memory modification tool for real-time memory manipulation and advanced in-game functionality.', 
+      image: AssaultCube,
+      url: 'https://github.com/Swxer/AssaultCube-v1.2.0.2-Trainer'
+    }
 ];
