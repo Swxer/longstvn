@@ -25,7 +25,7 @@ const TechStack: React.FC = () => {
         {techSkills.map((skill) => (
           <Grid key={skill.id}>
             <Tooltip 
-                title={skill.name} // The text that appears on hover
+                title={skill.name} 
                 arrow 
                 placement="top"
             >

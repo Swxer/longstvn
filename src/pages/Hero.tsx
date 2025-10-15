@@ -43,10 +43,8 @@ const Hero = () => {
 	const DARK_COLOR = '#010127'; 
   const CONTENT_FACTOR = 2.4; 
   
-  // Total pages = 1 (Hero) + CONTENT_FACTOR + 0.01 (Buffer to prevent cutoff)
+  // eugh the parallax page calculation made my brain go poof
   const TOTAL_PAGES = 1 + CONTENT_FACTOR + 0.01; // = 3.41
-
-  // Footer Offset = TOTAL_PAGES - 1 (The last visible page is always total pages - 1)
   const FOOTER_OFFSET = TOTAL_PAGES - 1; // = 2.41
   return (
     <>
