@@ -146,6 +146,7 @@ const HeroParallaxBackground = () => {
           backgroundPosition: "center 80%",
           minWidth: "100vw", // ensures coverage
           width: "100%", // fallback
+          imageRendering: "pixelated", // Crucial for Steven's pixel art style
         }}
       />
     </div>
