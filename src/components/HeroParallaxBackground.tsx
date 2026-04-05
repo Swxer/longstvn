@@ -1,45 +1,18 @@
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { generateStars } from "../utils/generateStars";
 import sky from "../images/hero/sky.png";
 import city1 from "../images/hero/city1.png";
 import city2 from "../images/hero/city2.png";
 import city3 from "../images/hero/city3.png";
 import city4 from "../images/hero/city4.png";
-import city5 from "../images/hero/city5.png";
+import city5v2 from "../images/hero/city5-2.png";
 import moon from "../images/hero/moon.png";
 import type { MotionStyle } from "motion";
+import { useParallaxScroll } from "../hooks/useParallaxScroll";
 
 const HeroParallaxBackground = () => {
-  const { scrollY } = useScroll();
-
-  const smoothScrollY = useSpring(scrollY, {
-    stiffness: 150,
-    damping: 25,
-    mass: 0.1,
-  });
-
-  const scrollEndPoint = 800; // Adjust this value based on how far you want the parallax to affect
-
-  // Mapping scroll (0 to 800px) to movement
-  const skyY = useTransform(smoothScrollY, [0, scrollEndPoint], [0, -35]);
-  const moonY = useTransform(smoothScrollY, [0, scrollEndPoint], [0, -50]);
-
-  // City layers (slow to fast)
-  const city1Y = useTransform(smoothScrollY, [0, scrollEndPoint], [0, -390]);
-  const city2Y = useTransform(smoothScrollY, [0, scrollEndPoint], [0, -490]);
-  const city3Y = useTransform(smoothScrollY, [0, scrollEndPoint], [0, -590]);
-
-  // YOUR NAME: Give it a speed between City 3 and City 4
-  const nameY = useTransform(smoothScrollY, [0, scrollEndPoint], [0, -200]);
-  const nameOpacity = useTransform(
-    smoothScrollY,
-    [0, scrollEndPoint / 2],
-    [1, 1],
-  ); // Fades out as you scroll
-
-  const city4Y = useTransform(smoothScrollY, [0, scrollEndPoint], [0, -690]);
-  const city5Y = useTransform(smoothScrollY, [0, scrollEndPoint], [0, -800]);
-  const starsY = useTransform(smoothScrollY, [0, scrollEndPoint], [0, -40]);
+  const { city1Y, city2Y, city3Y, city4Y, city5Y, nameY, skyY, moonY, starsY } =
+    useParallaxScroll();
 
   const cityScaleSize = 0.7;
 
@@ -134,7 +107,7 @@ const HeroParallaxBackground = () => {
           paddingBottom: "30vh",
           zIndex: 1, // Higher than city 3, lower than city 4
           y: nameY,
-          opacity: nameOpacity,
+          // opacity: nameOpacity,
           color: "white",
           fontFamily: "'Jersey 15', sans-serif",
           fontSize: "2vw", // Adjust size for better fit
@@ -158,15 +131,21 @@ const HeroParallaxBackground = () => {
           transformOrigin: "bottom",
         }}
       />
-      <motion.img
-        src={city5}
+      <motion.div
         style={{
-          ...layerStyle,
-          y: city5Y,
-          x: "-50%", // Keep this here to maintain centering with the scale
+          position: "absolute",
+          bottom: "-95vh",
+          left: 0,
+          right: 0,
+          height: "120vh", // viewport-relative height
           zIndex: 6,
-          scale: cityScaleSize,
-          transformOrigin: "bottom",
+          y: city5Y, // keep parallax
+          backgroundImage: `url(${city5v2})`,
+          backgroundRepeat: "repeat-x",
+          backgroundSize: "auto 145%", // auto width, full height
+          backgroundPosition: "center 80%",
+          minWidth: "100vw", // ensures coverage
+          width: "100%", // fallback
         }}
       />
     </div>

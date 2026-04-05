@@ -7,7 +7,6 @@ const Hero = () => {
       <HeroParallaxBackground />
 
       <main style={{ position: "relative", zIndex: 10 }}>
-        {/* Transparent Spacer: Keeps the city visible until user scrolls */}
         <div style={{ height: "100vh", pointerEvents: "none" }} />
         <HeroContent />
       </main>

@@ -23,20 +23,20 @@ export const projects: Project[] = [
     url: "https://github.com/Swxer/Multiplayer-CLI-Snake",
   },
   {
-    id: 2,
-    title: "Loop Mania",
-    description:
-      "A 2D strategy game featuring cyclical map traversal, automated character movement, and dynamic battle elements.",
-    image: LoopMania,
-    url: "https://github.com/Swxer/Loop-Mania",
-  },
-  {
     id: 3,
     title: "Instacook",
     description:
       " Full-stack recipe sharing platform allowing users to search, share, and manage recipes, complete with a personalised feed and bookmarking features.",
     image: InstaCook,
     url: "https://github.com/Swxer/Instacook",
+  },
+  {
+    id: 2,
+    title: "Loop Mania",
+    description:
+      "A 2D strategy game featuring cyclical map traversal, automated character movement, and dynamic battle elements.",
+    image: LoopMania,
+    url: "https://github.com/Swxer/Loop-Mania",
   },
   {
     id: 4,
