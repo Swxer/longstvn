@@ -1,73 +1,95 @@
-# React + TypeScript + Vite
+# Steven Long Nguyen - Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A creative portfolio with a pixel art aesthetic featuring custom parallax city layers and smooth scrolling.
 
-Currently, two official plugins are available:
+## 🚀 Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+# Install dependencies
+npm install
 
-## React Compiler
+# Start development server
+npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Build for production
+npm run build
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Deploy the 'dist' folder to Netlify
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📋 Project Overview
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Framework**: React 19 + TypeScript + Vite
+- **Purpose**: Personal portfolio showcasing projects, tech stack, and creative design
+- **Style**: Pixel art aesthetic with retro cityscape parallax hero
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📦 Key Packages
+
+| Package       | Purpose                                                                                              |
+| ------------- | ---------------------------------------------------------------------------------------------------- |
+| lenis         | Smooth scrolling - provides a premium, buttery-smooth scroll feel                                    |
+| framer-motion | Parallax animations - moves city layers at different speeds based on scroll position to create depth |
+| motion        | Additional animation utilities                                                                       |
+| @mui/material | UI components, icons, and layout system                                                              |
+
+## How the Parallax Works
+
+The parallax effect is created in `useParallaxScroll.ts` using Framer Motion's `useTransform`:
+
+```javascript
+// Different scroll ranges create different movement speeds
+const city1Y = useTransform(scrollY, [0, 800], [0, -390]);
+const city5Y = useTransform(scrollY, [0, 800], [0, -800]);
+// City 5 moves faster than City 1 = deeper parallax depth
 ```
+
+Each city layer moves at a different speed - farther layers move slower, closer layers move faster.
+
+## 🎨 Key Features
+
+- **Multi-layer parallax hero**: 5 city layers + sky/stars/moon
+- **Smooth scroll with Lenis**: removes janky default scroll behavior
+- **Pixel-perfect rendering**: imageRendering: pixelated preserves pixel art quality
+- **Responsive design**: works across devices with viewport-relative sizing
+- **Browser zoom friendly**: parallax layers scale naturally with zoom
+
+## 📁 Project Structure
+
+```bash
+src/
+├── components/
+│   ├── HeroParallaxBackground.tsx  # Parallax layers (city1-5, sky, moon, stars)
+│   ├── HeroContent.tsx             # Main content container (TechStack, Projects, Footer)
+│   ├── TechStack.tsx              # Tech stack display
+│   ├── ProjectSection.tsx         # Projects grid/section
+│   ├── ProjectCard.tsx            # Individual project card component
+│   └── Footer.tsx                 # Footer with social links
+├── hooks/
+│   └── useParallaxScroll.tsx      # Scroll-to-Y transforms for parallax layers
+├── pages/
+│   └── Hero.tsx                   # Main page - combines background + content
+├── utils/
+│   ├── techStacks.tsx             # Tech stack data (icons, names, categories)
+│   ├── projects.tsx               # Projects data (title, description, links, images)
+│   └── generateStars.tsx          # Generates star positions for parallax sky
+├── images/
+│   ├── hero/                      # Parallax layer images
+│   │   ├── sky.png                # Background sky
+│   │   ├── moon.png               # Moon layer
+│   │   ├── city1.png - city5.png  # City layers (back to front)
+│   │   ├── city5-2.png            # Frontmost city layer (repeated horizontally)
+│   │   └── oiia.gif               # Spinning cat easter egg
+│   └── project/                   # Project screenshots
+├── App.tsx                        # Root app component
+├── main.tsx                       # React entry point
+├── index.css                      # Global styles (Lenis setup, resets)
+└── App.css                        # App-specific styles
+```
+
+## 🔧 Notes for Future You
+
+- **Parallax speeds**: Edit `src/hooks/useParallaxScroll.tsx` to adjust how fast each layer moves
+- **Add new parallax layer**: Copy an existing `<motion.img>` pattern in `HeroParallaxBackground.tsx`
+- **Image assets**: All hero images are in s`rc/images/hero/`
+- **Deployment**: Run `npm run build` and drag the dist folder to Netlify
+- **Browser zoom**: The city5v2 layer uses CSS background with viewport units to handle Ctrl+/Ctrl- gracefully
