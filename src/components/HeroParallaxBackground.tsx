@@ -31,7 +31,6 @@ const HeroParallaxBackground = () => {
     ...layerStyle,
     bottom: "auto",
     top: 0,
-    // objectPosition: "top",
   };
 
   return (
@@ -107,7 +106,6 @@ const HeroParallaxBackground = () => {
           paddingBottom: "30vh",
           zIndex: 1, // Higher than city 3, lower than city 4
           y: nameY,
-          // opacity: nameOpacity,
           color: "white",
           fontFamily: "'Jersey 15', sans-serif",
           fontSize: "2vw", // Adjust size for better fit
@@ -141,12 +139,11 @@ const HeroParallaxBackground = () => {
           zIndex: 6,
           y: city5Y, // keep parallax
           backgroundImage: `url(${city5v2})`,
-          backgroundRepeat: "repeat-x",
           backgroundSize: "auto 145%", // auto width, full height
           backgroundPosition: "center 80%",
           minWidth: "100vw", // ensures coverage
           width: "100%", // fallback
-          imageRendering: "pixelated", // Crucial for Steven's pixel art style
+          imageRendering: "pixelated",
         }}
       />
     </div>

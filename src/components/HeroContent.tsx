@@ -3,12 +3,8 @@ import Footer from "../components/Footer";
 import TechStack from "../components/TechStack";
 import oiia from "../images/hero/oiia.gif";
 import { Box } from "@mui/material";
-// import { motion } from "framer-motion";
-// import { useParallaxScroll } from "../hooks/useParallaxScroll";
 
 const HeroContent = () => {
-  // const { heroContentY } = useParallaxScroll();
-
   return (
     <div
       style={{
@@ -22,8 +18,6 @@ const HeroContent = () => {
         display: "flex",
         flexDirection: "column",
         gap: "100px",
-        // y: heroContentY, // Parallax effect for the entire content
-        // paddingBottom: "50px",
       }}
     >
       <TechStack />

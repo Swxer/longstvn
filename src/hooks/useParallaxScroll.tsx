@@ -23,12 +23,9 @@ export const useParallaxScroll = () => {
   const city3Y = useTransform(scrollY, [0, scrollEndPoint], [0, -590], {
     clamp: false,
   });
-
-  // YOUR NAME: Give it a speed between City 3 and City 4
   const nameY = useTransform(scrollY, [0, scrollEndPoint], [0, -200], {
     clamp: false,
   });
-  // const nameOpacity = useTransform(scrollY, [0, scrollEndPoint / 2], [1, 1]); // Fades out as you scroll
 
   const city4Y = useTransform(scrollY, [0, scrollEndPoint], [0, -690], {
     clamp: false,
