@@ -56,6 +56,7 @@ const HeroParallaxBackground = () => {
           right: "10%",
           top: "5%",
           width: "120px",
+          imageRendering: "pixelated",
         }}
       />
 
