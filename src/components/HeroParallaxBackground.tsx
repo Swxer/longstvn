@@ -16,6 +16,12 @@ const HeroParallaxBackground = () => {
 
   const cityScaleSize = 0.7;
 
+  const backCities = [
+    { src: city1, y: city1Y, zIndex: 1 },
+    { src: city2, y: city2Y, zIndex: 2 },
+    { src: city3, y: city3Y, zIndex: 3 },
+  ];
+
   const layerStyle: MotionStyle = {
     position: "absolute",
     bottom: 0,
@@ -60,40 +66,20 @@ const HeroParallaxBackground = () => {
         }}
       />
 
-      {/* Back Cities */}
-      <motion.img
-        src={city1}
-        style={{
-          ...layerStyle,
-          y: city1Y,
-          x: "-50%", // Keep this here to maintain centering with the scale
-          zIndex: 1,
-          scale: cityScaleSize,
-          transformOrigin: "bottom",
-        }}
-      />
-      <motion.img
-        src={city2}
-        style={{
-          ...layerStyle,
-          y: city2Y,
-          x: "-50%", // Keep this here to maintain centering with the scale
-          zIndex: 2,
-          scale: cityScaleSize,
-          transformOrigin: "bottom",
-        }}
-      />
-      <motion.img
-        src={city3}
-        style={{
-          ...layerStyle,
-          y: city3Y,
-          x: "-50%", // Keep this here to maintain centering with the scale
-          zIndex: 3,
-          scale: cityScaleSize,
-          transformOrigin: "bottom",
-        }}
-      />
+      {backCities.map(({ src, y, zIndex }) => (
+        <motion.img
+          key={zIndex}
+          src={src}
+          style={{
+            ...layerStyle,
+            y,
+            x: "-50%",
+            zIndex,
+            scale: cityScaleSize,
+            transformOrigin: "bottom",
+          }}
+        />
+      ))}
 
       {/* THE SANDWICHED NAME (Between City 3 and 4) */}
       <motion.div
@@ -118,13 +104,13 @@ const HeroParallaxBackground = () => {
         <h1>Steven Long Nguyen</h1>
       </motion.div>
 
-      {/* Front Cities (They will cover the bottom of your name as they rise) */}
+      {/* Front City (covers the bottom of the name as it rises) */}
       <motion.img
         src={city4}
         style={{
           ...layerStyle,
           y: city4Y,
-          x: "-50%", // Keep this here to maintain centering with the scale
+          x: "-50%",
           zIndex: 5,
           scale: cityScaleSize,
           transformOrigin: "bottom",
