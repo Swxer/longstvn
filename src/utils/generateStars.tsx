@@ -1,37 +1,52 @@
-export const generateStars = (count: number) => {
-  const stars = [];
-  const starColours = ['#fbfbcb','#87fbf9','#FAA0A0','#c1ffe4'];
+import { useRef, useEffect } from "react";
 
-  for (let i = 0; i < count; i++) {
-    // random position across the screen
-    const x = Math.random() * 100; // viewport width
-    const y = Math.random() * 100; // viewport height
+const STAR_COLOURS = ["#fbfbcb", "#87fbf9", "#FAA0A0", "#c1ffe4"];
+const STAR_COUNT = 300;
 
-    // 10% the star will be at size 6.5pt
-    const size = Math.random() > 0.9 ? 6.5 : 2;
-    
-    // random opacity for the star
-    const opacity = Math.random() * (1 - 0.4) + 0.4; 
+export const StarCanvas = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
-    // pick a colour for the star
-    const randomIndex = Math.floor(Math.random() * starColours.length)
-    const chosenColour = starColours[randomIndex]
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-    stars.push(
-      <div 
-        key={i} 
-        style={{
-          position: 'absolute',
-          left: `${x}vw`,
-          top: `${y}vh`,
-          width: `${size}px`,
-          height: `${size}px`,
-          backgroundColor: `${chosenColour}`,
-          opacity: opacity,
-          boxShadow: `0 0 ${size}px ${chosenColour}`, 
-        }}
-      />
-    );
-  }
-  return stars;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < STAR_COUNT; i++) {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      const size = Math.random() > 0.9 ? 6.5 : 2;
+      const opacity = Math.random() * 0.6 + 0.4;
+      const colour = STAR_COLOURS[Math.floor(Math.random() * STAR_COLOURS.length)];
+
+      ctx.globalAlpha = opacity;
+      ctx.shadowBlur = size;
+      ctx.shadowColor = colour;
+      ctx.fillStyle = colour;
+      ctx.fillRect(x, y, size, size);
+    }
+
+    ctx.globalAlpha = 1;
+    ctx.shadowBlur = 0;
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        pointerEvents: "none",
+      }}
+    />
+  );
 };
