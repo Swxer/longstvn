@@ -13,7 +13,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, ur
     <Box 
       component="a"
       href={url}
-      target="_blank"sx={{ mb: 4, width: '100%' }}
+      target="_blank"
+      sx={{ mb: 4, width: '100%' }}
     > 
       <Card 
 

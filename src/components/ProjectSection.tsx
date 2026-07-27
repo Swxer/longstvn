@@ -2,14 +2,6 @@ import { Container, Typography, Grid } from '@mui/material';
 import ProjectCard from './ProjectCard';
 import { projects } from '../utils/projects'
 
-export interface Project {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  url: string;
-}
-
 const ProjectSection = () => {
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}> 
@@ -28,7 +20,7 @@ const ProjectSection = () => {
       </Typography>
 
       <Grid container spacing={4}>
-        {projects.map((project: Project) => (
+        {projects.map((project) => (
           
           <Grid 
             key={project.id} 

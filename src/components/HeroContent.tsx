@@ -9,12 +9,9 @@ const HeroContent = () => {
     <div
       style={{
         backgroundColor: "#010127",
-        width: "100vw", // Force full viewport width
+        width: "100dvw",
         position: "relative",
-        left: "50%", // Center hack for parents with padding
-        right: "50%",
-        marginLeft: "-50vw", // Pulls the div to the absolute left edge
-        marginRight: "-50vw", // Pulls the div to the absolute right edge
+        marginLeft: "calc(-50dvw + 50%)",
         display: "flex",
         flexDirection: "column",
         gap: "100px",
