@@ -6,7 +6,7 @@ const DARK_PURPLE = '#1a103d';
 
 const TechStack: React.FC = () => {
   return (
-    <Box sx={{ py: 8, px: 2, backgroundColor: '#010127' }}>
+    <Box sx={{ py: 8, px: { xs: 4, sm: 8, md: 16 }, backgroundColor: '#010127' }}>
       <Typography
         variant="h3"
         textAlign="center"
