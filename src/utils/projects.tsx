@@ -3,7 +3,8 @@ import LoopMania from "../images/project/loopmania.png";
 import InstaCook from "../images/project/recipe.png";
 import HamsterHealth from "../images/project/hamsterhealth.png";
 import Transcriber from "../images/project/transcriber.png";
-import SnakeSSH from "../images/project/SnakeSSH.png";
+import SnakeSSH from "../images/project/snake2.png";
+import FactoryReset from "../images/project/FactoryReset.png";
 
 export interface Project {
   id: number;
@@ -31,12 +32,20 @@ export const projects: Project[] = [
     url: "https://github.com/Swxer/Instacook",
   },
   {
-    id: 2,
-    title: "Loop Mania",
+    id: 5,
+    title: "Guitar Tab Transcriber",
     description:
-      "A 2D strategy game featuring cyclical map traversal, automated character movement, and dynamic battle elements.",
-    image: LoopMania,
-    url: "https://github.com/Swxer/Loop-Mania",
+      "A tool that processes an audio file, analyses its melody, and converts the musical data into a clean, readable ASCII guitar tablature.",
+    image: Transcriber,
+    url: "https://github.com/Swxer/guitar-tab-transcriber",
+  },
+  {
+    id: 7,
+    title: "Factory Reset",
+    description:
+      "2D Top-down Shooter made with C# and Unity. Features include dynamic enemy AI, variety of weapons and player upgrades.",
+    image: FactoryReset,
+    url: "https://github.com/Brownie-Dog/factory-reset",
   },
   {
     id: 4,
@@ -47,12 +56,12 @@ export const projects: Project[] = [
     url: "https://github.com/Team-Hamsterdam",
   },
   {
-    id: 5,
-    title: "Guitar Tab Transcriber",
+    id: 2,
+    title: "Loop Mania",
     description:
-      "A tool that processes an audio file, analyses its melody, and converts the musical data into a clean, readable ASCII guitar tablature.",
-    image: Transcriber,
-    url: "https://github.com/Swxer/guitar-tab-transcriber",
+      "A 2D strategy game featuring cyclical map traversal, automated character movement, and dynamic battle elements.",
+    image: LoopMania,
+    url: "https://github.com/Swxer/Loop-Mania",
   },
   {
     id: 6,
