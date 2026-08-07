@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+
 import "./App.css";
 import Lenis from "lenis";
 import Hero from "./pages/Hero";
@@ -8,7 +7,7 @@ import Hero from "./pages/Hero";
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.5, // adjust for more/less smoothing
+      duration: 0.5,
       smoothWheel: true,
     });
 
@@ -16,8 +15,9 @@ function App() {
       lenis.raf(time);
       requestAnimationFrame(raf);
     };
-
     requestAnimationFrame(raf);
+
+    window.addEventListener("load", () => lenis.resize());
 
     return () => lenis.destroy();
   }, []);
