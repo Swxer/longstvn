@@ -34,7 +34,7 @@ npm run build
 
 ## How the Parallax Works
 
-The parallax effect is created in `useParallaxScroll.ts` using Framer Motion's `useTransform`:
+The parallax effect is created in `useParallaxScroll.tsx` using Framer Motion's `useTransform`:
 
 ```javascript
 // Different scroll ranges create different movement speeds
@@ -58,38 +58,37 @@ Each city layer moves at a different speed - farther layers move slower, closer 
 ```bash
 src/
 ├── components/
+│   ├── Hero.tsx                    # Main page - combines background + content
 │   ├── HeroParallaxBackground.tsx  # Parallax layers (city1-5, sky, moon, stars)
-│   ├── HeroContent.tsx             # Main content container (TechStack, Projects, Footer)
-│   ├── TechStack.tsx              # Tech stack display
-│   ├── ProjectSection.tsx         # Projects grid/section
-│   ├── ProjectCard.tsx            # Individual project card component
-│   └── Footer.tsx                 # Footer with social links
+│   ├── MainContent.tsx             # Main content container (TechStack, Projects, Footer)
+│   ├── StarCanvas.tsx              # Canvas-rendered starfield for parallax sky
+│   ├── TechStack.tsx               # Tech stack display
+│   ├── ProjectSection.tsx          # Projects grid/section
+│   ├── ProjectCard.tsx             # Individual project card component
+│   └── Footer.tsx                  # Footer with social links
 ├── hooks/
-│   └── useParallaxScroll.tsx      # Scroll-to-Y transforms for parallax layers
-├── pages/
-│   └── Hero.tsx                   # Main page - combines background + content
-├── utils/
-│   ├── techStacks.tsx             # Tech stack data (icons, names, categories)
-│   ├── projects.tsx               # Projects data (title, description, links, images)
-│   └── generateStars.tsx          # Generates star positions for parallax sky
+│   └── useParallaxScroll.tsx       # Scroll-to-Y transforms for parallax layers
+├── data/
+│   ├── techStacks.tsx              # Tech stack data (icons, names)
+│   └── projects.tsx                # Projects data (title, description, links, images)
 ├── images/
-│   ├── hero/                      # Parallax layer images
-│   │   ├── sky.png                # Background sky
-│   │   ├── moon.png               # Moon layer
-│   │   ├── city1.png - city5.png  # City layers (back to front)
-│   │   ├── city5-2.png            # Frontmost city layer (repeated horizontally)
-│   │   └── oiia.gif               # Spinning cat easter egg
-│   └── project/                   # Project screenshots
-├── App.tsx                        # Root app component
-├── main.tsx                       # React entry point
-├── index.css                      # Global styles (Lenis setup, resets)
-└── App.css                        # App-specific styles
+│   ├── hero/                       # Parallax layer images
+│   │   ├── sky.png                 # Background sky
+│   │   ├── moon.png                # Moon layer
+│   │   ├── city1.png - city5.png   # City layers (back to front)
+│   │   ├── city5-2.png             # Frontmost city layer (repeated horizontally)
+│   │   └── oiia.gif                # Spinning cat easter egg
+│   └── project/                    # Project screenshots
+├── App.tsx                         # Root app component
+├── main.tsx                        # React entry point
+├── index.css                       # Global styles (resets)
+└── App.css                         # App-specific styles (scrollbar, root)
 ```
 
 ## 🔧 Notes for Future You
 
 - **Parallax speeds**: Edit `src/hooks/useParallaxScroll.tsx` to adjust how fast each layer moves
 - **Add new parallax layer**: Copy an existing `<motion.img>` pattern in `HeroParallaxBackground.tsx`
-- **Image assets**: All hero images are in s`rc/images/hero/`
+- **Image assets**: All hero images are in `src/images/hero/`
 - **Deployment**: Run `npm run build` and drag the dist folder to Netlify
 - **Browser zoom**: The city5v2 layer uses CSS background with viewport units to handle Ctrl+/Ctrl- gracefully
