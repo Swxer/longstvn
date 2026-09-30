@@ -1,5 +1,5 @@
-import HeroParallaxBackground from "../components/HeroParallaxBackground";
-import HeroContent from "../components/HeroContent";
+import HeroParallaxBackground from "./HeroParallaxBackground";
+import MainContent from "./MainContent";
 
 const Hero = () => {
   return (
@@ -8,7 +8,7 @@ const Hero = () => {
 
       <main style={{ position: "relative", zIndex: 10 }}>
         <div style={{ height: "100vh", pointerEvents: "none" }} />
-        <HeroContent />
+        <MainContent />
       </main>
     </div>
   );

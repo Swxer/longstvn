@@ -1,6 +1,6 @@
 import { Container, Typography, Grid } from '@mui/material';
 import ProjectCard from './ProjectCard';
-import { projects } from '../utils/projects'
+import { projects } from '../data/projects'
 
 const ProjectSection = () => {
   return (

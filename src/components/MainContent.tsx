@@ -1,10 +1,10 @@
-import ProjectSection from "../components/ProjectSection";
-import Footer from "../components/Footer";
-import TechStack from "../components/TechStack";
+import ProjectSection from "./ProjectSection";
+import Footer from "./Footer";
+import TechStack from "./TechStack";
 import oiia from "../images/hero/oiia.gif";
 import { Box } from "@mui/material";
 
-const HeroContent = () => {
+const MainContent = () => {
   return (
     <div
       style={{
@@ -48,4 +48,4 @@ const HeroContent = () => {
   );
 };
 
-export default HeroContent;
+export default MainContent;

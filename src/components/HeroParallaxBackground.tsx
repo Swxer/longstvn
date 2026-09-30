@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { StarCanvas } from "../utils/generateStars";
+import { StarCanvas } from "./StarCanvas";
 import sky from "../images/hero/sky.png";
 import city1 from "../images/hero/city1.png";
 import city2 from "../images/hero/city2.png";
@@ -51,7 +51,16 @@ const HeroParallaxBackground = () => {
     >
       <motion.img src={sky} style={{ ...skyStyle, y: skyY }} />
       {/* Stars Layer */}
-      <motion.div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", y: starsY }}>
+      <motion.div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          y: starsY,
+        }}
+      >
         <StarCanvas />
       </motion.div>
       <motion.img
@@ -91,7 +100,7 @@ const HeroParallaxBackground = () => {
           alignItems: "center",
           justifyContent: "center",
           paddingBottom: "30vh",
-          zIndex: 1, // Higher than city 3, lower than city 4
+          zIndex: 0, // Higher than city 3, lower than city 4
           y: nameY,
           color: "white",
           fontFamily: "'Jersey 15', sans-serif",

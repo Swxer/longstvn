@@ -1,4 +1,4 @@
-import { techSkills } from '../utils/techStacks';
+import { techSkills } from '../data/techStacks';
 import { Box, Typography, Grid, Tooltip, Paper } from '@mui/material';
 import type React from 'react';
 

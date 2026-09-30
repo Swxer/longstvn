@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import "./App.css";
 import Lenis from "lenis";
-import Hero from "./pages/Hero";
+import Hero from "./components/Hero";
 
 function App() {
   useEffect(() => {
