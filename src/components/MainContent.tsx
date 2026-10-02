@@ -1,4 +1,4 @@
-import ProjectSection from "./ProjectSection";
+import ProjectSection from "./projects/ProjectSection";
 import Footer from "./Footer";
 import TechStack from "./TechStack";
 import oiia from "../images/hero/oiia.gif";

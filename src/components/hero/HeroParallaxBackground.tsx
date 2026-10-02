@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { StarCanvas } from "./StarCanvas";
-import sky from "../images/hero/sky.png";
-import city1 from "../images/hero/city1.png";
-import city2 from "../images/hero/city2.png";
-import city3 from "../images/hero/city3.png";
-import city4 from "../images/hero/city4.png";
-import city5v2 from "../images/hero/city5-2.png";
-import moon from "../images/hero/moon.png";
+import sky from "../../images/hero/sky.png";
+import city1 from "../../images/hero/city1.png";
+import city2 from "../../images/hero/city2.png";
+import city3 from "../../images/hero/city3.png";
+import city4 from "../../images/hero/city4.png";
+import city5v2 from "../../images/hero/city5-2.png";
+import moon from "../../images/hero/moon.png";
 import type { MotionStyle } from "motion";
-import { useParallaxScroll } from "../hooks/useParallaxScroll";
+import { useParallaxScroll } from "../../hooks/useParallaxScroll";
 
 const HeroParallaxBackground = () => {
   const { city1Y, city2Y, city3Y, city4Y, city5Y, nameY, skyY, moonY, starsY } =

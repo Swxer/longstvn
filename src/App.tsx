@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 import "./App.css";
 import Lenis from "lenis";
-import Hero from "./components/Hero";
+import Home from "./pages/Home";
 
 function App() {
   useEffect(() => {
@@ -22,7 +22,7 @@ function App() {
     return () => lenis.destroy();
   }, []);
 
-  return <Hero />;
+  return <Home />;
 }
 
 export default App;

@@ -1,7 +1,7 @@
-import HeroParallaxBackground from "./HeroParallaxBackground";
-import MainContent from "./MainContent";
+import HeroParallaxBackground from "../components/hero/HeroParallaxBackground";
+import MainContent from "../components/MainContent";
 
-const Hero = () => {
+const Home = () => {
   return (
     <div style={{ position: "relative", width: "100%", overflowX: "hidden" }}>
       <HeroParallaxBackground />
@@ -13,4 +13,4 @@ const Hero = () => {
     </div>
   );
 };
-export default Hero;
+export default Home;
