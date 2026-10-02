@@ -1,79 +1,20 @@
 // https://devicon.dev/
+const ICON = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
 
 export const techSkills = [
-  {
-    id: 1,
-    name: "HTML",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-  },
-  {
-    id: 2,
-    name: "CSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-  },
-  {
-    id: 3,
-    name: "JavaScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-  },
-  {
-    id: 4,
-    name: "TypeScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
-  },
-  {
-    id: 5,
-    name: "Node.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
-  },
-  {
-    id: 6,
-    name: "React",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-  },
-  {
-    id: 7,
-    name: "Bootstrap",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
-  },
-  {
-    id: 8,
-    name: "Material UI",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/materialui/materialui-original.svg",
-  },
-  {
-    id: 9,
-    name: "Tailwind CSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
-  },
-  {
-    id: 10,
-    name: "Python",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-  },
-  {
-    id: 11,
-    name: "Java",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
-  },
-  {
-    id: 12,
-    name: "C#",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
-  },
-  {
-    id: 13,
-    name: "Git",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
-  },
-  {
-    id: 14,
-    name: "Docker",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-  },
-  {
-    id: 15,
-    name: "Terraform",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg",
-  },
+  { name: "HTML", icon: `${ICON}/html5/html5-original.svg` },
+  { name: "CSS", icon: `${ICON}/css3/css3-original.svg` },
+  { name: "JavaScript", icon: `${ICON}/javascript/javascript-original.svg` },
+  { name: "TypeScript", icon: `${ICON}/typescript/typescript-original.svg` },
+  { name: "Node.js", icon: `${ICON}/nodejs/nodejs-original.svg` },
+  { name: "React", icon: `${ICON}/react/react-original.svg` },
+  { name: "Bootstrap", icon: `${ICON}/bootstrap/bootstrap-original.svg` },
+  { name: "Material UI", icon: `${ICON}/materialui/materialui-original.svg` },
+  { name: "Tailwind CSS", icon: `${ICON}/tailwindcss/tailwindcss-original.svg` },
+  { name: "Python", icon: `${ICON}/python/python-original.svg` },
+  { name: "Java", icon: `${ICON}/java/java-original.svg` },
+  { name: "C#", icon: `${ICON}/csharp/csharp-original.svg` },
+  { name: "Git", icon: `${ICON}/git/git-original.svg` },
+  { name: "Docker", icon: `${ICON}/docker/docker-original.svg` },
+  { name: "Terraform", icon: `${ICON}/terraform/terraform-original.svg` },
 ];

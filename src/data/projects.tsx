@@ -7,7 +7,6 @@ import SnakeSSH from "../images/project/snake2.png";
 import FactoryReset from "../images/project/FactoryReset.png";
 
 export interface Project {
-  id: number;
   title: string;
   description: string;
   image: string;
@@ -16,7 +15,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 1,
     title: "Multiplayer CLI Snake Game",
     description:
       "Real-time multiplayer Snake game that runs directly in your terminal via SSH. Built with C#, .NET, and SignalR. All deployed on GCP.",
@@ -24,15 +22,13 @@ export const projects: Project[] = [
     url: "https://github.com/Swxer/Multiplayer-CLI-Snake",
   },
   {
-    id: 3,
     title: "Instacook",
     description:
-      " Full-stack recipe sharing platform allowing users to search, share, and manage recipes, complete with a personalised feed and bookmarking features.",
+      "Full-stack recipe sharing platform allowing users to search, share, and manage recipes, complete with a personalised feed and bookmarking features.",
     image: InstaCook,
     url: "https://github.com/Swxer/Instacook",
   },
   {
-    id: 5,
     title: "Guitar Tab Transcriber",
     description:
       "A tool that processes an audio file, analyses its melody, and converts the musical data into a clean, readable ASCII guitar tablature.",
@@ -40,7 +36,6 @@ export const projects: Project[] = [
     url: "https://github.com/Swxer/guitar-tab-transcriber",
   },
   {
-    id: 7,
     title: "Factory Reset",
     description:
       "2D Top-down Shooter made with C# and Unity. Features include dynamic enemy AI, variety of weapons and player upgrades.",
@@ -48,7 +43,6 @@ export const projects: Project[] = [
     url: "https://github.com/Brownie-Dog/factory-reset",
   },
   {
-    id: 4,
     title: "Hamster Health",
     description:
       "Hackathon project (ranked top 16 of 75 teams) focused on organization, habit tracking, and user motivation.",
@@ -56,7 +50,6 @@ export const projects: Project[] = [
     url: "https://github.com/Team-Hamsterdam",
   },
   {
-    id: 2,
     title: "Loop Mania",
     description:
       "A 2D strategy game featuring cyclical map traversal, automated character movement, and dynamic battle elements.",
@@ -64,7 +57,6 @@ export const projects: Project[] = [
     url: "https://github.com/Swxer/Loop-Mania",
   },
   {
-    id: 6,
     title: "AssaultCube Trainer",
     description:
       "Runtime memory modification tool for real-time memory manipulation and advanced in-game functionality.",

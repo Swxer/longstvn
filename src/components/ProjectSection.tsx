@@ -23,7 +23,7 @@ const ProjectSection = () => {
         {projects.map((project) => (
           
           <Grid 
-            key={project.id} 
+            key={project.title} 
             size={{
                 xs: 12,
                 sm: 6,
